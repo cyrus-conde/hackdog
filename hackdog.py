@@ -137,7 +137,7 @@ def menu():
         try:
             otw = requests.get('https://graph.facebook.com/me?access_token=' + token)
             a = json.loads(otw.text)
-            nama = a['name']
+            name = a['name']
             id = a['id']
         except KeyError:
             os.system('clear')
@@ -157,10 +157,9 @@ def menu():
     print intro4
     print intro5
     print '\x1b[1;97m\xe2\x95\x94' + 40 * '\xe2\x95\x90'
-    print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Nama \x1b[1;91m: \x1b[1;92m' + nama
+    print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Name \x1b[1;91m: \x1b[1;92m' + name
     print '\x1b[1;97m\xe2\x95\x9a' + 40 * '\xe2\x95\x90'
-    print '\x1b[1;37;40m1. information Pengguna'
-    print '\x1b[1;37;40m2. Guard       '
+    print '\x1b[1;37;40m2. Profile Guard       '
     print '\x1b[1;37;40m3. LogOut            '
     print '\x1b[1;31;40m0. exit            '
     print
@@ -174,97 +173,21 @@ def select():
         select()
     else:
         if hdog == '1':
-            information()
+            guard()
         else:
-            
             if hdog == '2':
-                guard()
+                os.system('rm -rf login.txt')
+                os.system('xdg-open https://www.youtube.com/channel/UCHIWqhRSv3kf124JHkixBnw')
+                exit()
             else:
-                if hdog == '3':
-                    os.system('rm -rf login.txt')
-                    os.system('xdg-open https://www.youtube.com/channel/UCHIWqhRSv3kf124JHkixBnw')
+                if hdog == '0':
                     exit()
                 else:
-                    if hdog == '0':
-                        exit()
-                    else:
-                        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + hdog + ' \x1b[1;91m select again'
-                        select()
+                    print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + hdog + ' \x1b[1;91m select again'
+                    select()
 
 
-def information():
-    os.system('clear')
-    try:
-        token = open('login.txt', 'r').read()
-    except IOError:
-        print '\x1b[1;91m[!] Token tidak ditemukan'
-        os.system('rm -rf login.txt')
-        time.sleep(1)
-        login()
 
-    os.system('clear')
-    print intro1
-    print intro2
-    print intro3
-    print intro4
-    print intro5 
-    print 40 * '\x1b[1;97m\xe2\x95\x90'
-    id = raw_input('\x1b[1;91m[+] \x1b[1;92mMasukan ID\x1b[1;97m/\x1b[1;92mNama\x1b[1;91m : \x1b[1;97m')
-    wait('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92m Wait a minute \x1b[1;97m...')
-    r = requests.get('https://graph.facebook.com/me/friends?access_token=' + token)
-    cok = json.loads(r.text)
-    for p in cok['data']:
-        if id in p['name'] or id in p['id']:
-            r = requests.get('https://graph.facebook.com/' + p['id'] + '?access_token=' + token)
-            z = json.loads(r.text)
-            print 40 * '\x1b[1;97m\xe2\x95\x90'
-            try:
-                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mNama\x1b[1;97m          : ' + z['name']
-            except KeyError:
-                print '\x1b[1;91m[?] \x1b[1;92mNama\x1b[1;97m          : \x1b[1;91mTidak ada'
-            else:
-                try:
-                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mID\x1b[1;97m            : ' + z['id']
-                except KeyError:
-                    print '\x1b[1;91m[?] \x1b[1;92mID\x1b[1;97m            : \x1b[1;91mTidak ada'
-                else:
-                    try:
-                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mEmail\x1b[1;97m         : ' + z['email']
-                    except KeyError:
-                        print '\x1b[1;91m[?] \x1b[1;92mEmail\x1b[1;97m         : \x1b[1;91mTidak ada'
-                    else:
-                        try:
-                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mNomor HP\x1b[1;97m      : ' + z['mobile_phone']
-                        except KeyError:
-                            print '\x1b[1;91m[?] \x1b[1;92mNomor HP\x1b[1;97m      : \x1b[1;91mTidak ada'
-
-                        try:
-                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mLokasi\x1b[1;97m        : ' + z['location']['name']
-                        except KeyError:
-                            print '\x1b[1;91m[?] \x1b[1;92mLokasi\x1b[1;97m        : \x1b[1;91mTidak ada'
-
-                    try:
-                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mTanggal Lahir\x1b[1;97m : ' + z['birthday']
-                    except KeyError:
-                        print '\x1b[1;91m[?] \x1b[1;92mTanggal Lahir\x1b[1;97m : \x1b[1;91mTidak ada'
-
-                try:
-                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mSekolah\x1b[1;97m       : '
-                    for q in z['education']:
-                        try:
-                            print '\x1b[1;91m                   ~ \x1b[1;97m' + q['school']['name']
-                        except KeyError:
-                            print '\x1b[1;91m                   ~ \x1b[1;91mTidak ada'
-
-                except KeyError:
-                    pass
-
-            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-            menu()
-    else:
-        print '\x1b[1;91m[\xe2\x9c\x96] Pengguna tidak ditemukan'
-        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-        menu()
 
 def guard():
     global token
