@@ -112,15 +112,15 @@ def login():
 
         if 'checkpoint' in url:
         	print '\n\x1b[1;91m[!] \x1b[1;93m checkpoint!'
-            print '\n\x1b[1;91m[!] \x1b[1;93m Please login your account in browser'
-            os.system('rm -rf login.txt')
-            time.sleep(1)
-            exit()
+            	print '\n\x1b[1;91m[!] \x1b[1;93m Please login your account in browser'
+        	os.system('rm -rf login.txt')
+            	time.sleep(1)
+            	exit()
         else:
-            print '\n\x1b[1;91m[!] Login Failed'
-            os.system('rm -rf login.txt')
-            time.sleep(1)
-            login()
+            	print '\n\x1b[1;91m[!] Login Failed'
+            	os.system('rm -rf login.txt')
+           	time.sleep(1)
+            	login()
 
 
 def menu():
