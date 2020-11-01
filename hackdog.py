@@ -25,7 +25,7 @@ def wait(z):
 
 intro1 = 'HH    HH     A       CCCCC  KK    KK  DDDDD	 OOOOO	 GGGGGG'
 intro2 = 'HH    HH    A A     CC      KK  KK    DD   DD	O     O	 G	   '
-intro3 = 'HHHHHHHH   A   A   CC	      KKKK	DD   DD	O     O	 G GGGG'
+intro3 = 'HHHHHHHH   A   A   CC       KKKK      DD   DD	O     O	 G GGGG'
 intro4 = 'HH    HH  AAAAAAA   CC      KK  KK    DD   DD	O     O	 G    G'
 intro5 = 'HH    HH AA     AA   CCCCC  KK    KK  DDDDD	 OOOOO	 GGGGGG'
 
