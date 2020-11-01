@@ -1,7 +1,5 @@
-#Decompiled by MR.K7C8NG
+#Decompiled by HACKDOG
 import os, sys, time, datetime, random, hashlib, re, threading, json, getpass, urllib, requests, mechanize
-from multiprocessing.pool import ThreadPool
-
 from requests.exceptions import ConnectionError
 from mechanize import Browser
 reload(sys)
@@ -38,24 +36,9 @@ def tick():
         time.sleep(1)
 
 
-back = 0
-threads = []
-berhasil = []
-cekpoint = []
-gagal = []
-idteman = []
-idfromteman = []
-idmem = []
+
 id = []
-em = []
-emfromteman = []
-hp = []
-hpfromteman = []
-reaksi = []
-reaksigrup = []
-komen = []
-komengrup = []
-listgrup = []
+
 
 
 
@@ -184,7 +167,7 @@ def select():
                     exit()
                 else:
                     print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + hdog + ' \x1b[1;91m select again'
-                    select()
+                    menu()
 
 
 
@@ -257,11 +240,11 @@ def guard_check(token, enable=True):
     else:
         if '"is_shielded":false' in res.text:
             	os.system('clear')
-           	print intro1
-		print intro2
-		print intro3
-		print intro4
-		print intro5
+	           	print intro1
+				print intro2
+				print intro3
+				print intro4
+				print intro5
             	print 40 * '\x1b[1;97m\xe2\x95\x90'
             	print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;91m Disabled'
             	raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
@@ -272,4 +255,4 @@ def guard_check(token, enable=True):
 
 if __name__ == '__main__':
 	login()
-# okay decompiling 3.pyc
+
