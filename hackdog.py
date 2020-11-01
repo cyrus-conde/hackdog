@@ -23,7 +23,11 @@ def street(z):
         time.sleep(0.01)
 
 
-logo = 'HH    HH     A		   CCCCC  KK	KK  DDDDD	 OOOOO	 GGGGGG\nHH    HH    A A		 CC       KK  KK	DD   DD	O     O	 G	   \nHHHHHHHH   A   A	CC		  KKKK	    DD	 DD	O     O	 G GGGG\nHH    HH  AAAAAAA	 CC		  KK  KK    DD   DD	O     O	 G    G\nHH    HH AA     AA	   CCCCC  KK	KK  DDDDD	 OOOOO	 GGGGGG'
+logo = 'HH    HH     A		   CCCCC  KK	KK  DDDDD	 OOOOO	 GGGGGG'
+	   'HH    HH    A A		 CC       KK  KK	DD   DD	O     O	 G	   '
+	   'HHHHHHHH   A   A	CC		  KKKK	    DD	 DD	O     O	 G GGGG'
+	   'HH    HH  AAAAAAA	 CC		  KK  KK    DD   DD	O     O	 G    G'
+	   'HH    HH AA     AA	   CCCCC  KK	KK  DDDDD	 OOOOO	 GGGGGG'
 
 def tick():
     titick = [
