@@ -23,11 +23,11 @@ def wait(z):
         time.sleep(0.01)
 
 
-intro1 = 'HH    HH     A       CCCCC  KK    KK  DDDDD	 OOOOO	 GGGGGG'
-intro2 = 'HH    HH    A A     CC      KK  KK    DD   DD	O     O	 G	   '
-intro3 = 'HHHHHHHH   A   A   CC       KKKK      DD   DD	O     O	 G GGGG'
-intro4 = 'HH    HH  AAAAAAA   CC      KK  KK    DD   DD	O     O	 G    G'
-intro5 = 'HH    HH AA     AA   CCCCC  KK    KK  DDDDD	 OOOOO	 GGGGGG'
+intro1 = '\033[91mHH    HH     A       CCCCC  KK    KK  \033[93mDDDDD	 OOOOO	 GGGGGG'
+intro2 = '\033[91mHH    HH    A A     CC      KK  KK    \033[93mDD   DD	O     O	 G	   '
+intro3 = '\033[91mHHHHHHHH   A   A   CC       KKKK      \033[93mDD   DD	O     O	 G GGGG'
+intro4 = '\033[91mHH    HH  AAAAAAA   CC      KK  KK    \033[93mDD   DD	O     O	 G    G'
+intro5 = '\033[91mHH    HH AA     AA   CCCCC  KK    KK  \033[93mDDDDD	 OOOOO	 GGGGGG'
 
 def tick():
     titick = [
