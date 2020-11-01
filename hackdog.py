@@ -142,8 +142,8 @@ def menu():
     print '\x1b[1;97m\xe2\x95\x94' + 40 * '\xe2\x95\x90'
     print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Name \x1b[1;91m: \x1b[1;92m' + name
     print '\x1b[1;97m\xe2\x95\x9a' + 40 * '\xe2\x95\x90'
-    print '\x1b[1;37;40m2. Profile Guard       '
-    print '\x1b[1;37;40m3. LogOut            '
+    print '\x1b[1;37;40m1. Profile Guard       '
+    print '\x1b[1;37;40m2. LogOut            '
     print '\x1b[1;31;40m0. exit            '
     print
     select()
@@ -204,7 +204,7 @@ def guard():
             guard_check(token, nonactive)
         else:
             if g == '0':
-                select()
+                menu()
             else:
                 if g == '':
                     exit()
@@ -236,19 +236,19 @@ def guard_check(token, enable=True):
         print 40 * '\x1b[1;97m\xe2\x95\x90'
         print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92m Activated'
         raw_input('\n\x1b[1;91m[ \x1b[1;97m Back \x1b[1;91m]')
-        lain()
+        menu()
     else:
         if '"is_shielded":false' in res.text:
             	os.system('clear')
-		print intro1
-		print intro2
-		print intro3
-		print intro4
-		print intro5
+	           	print intro1
+				print intro2
+				print intro3
+				print intro4
+				print intro5
             	print 40 * '\x1b[1;97m\xe2\x95\x90'
             	print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;91m Disabled'
             	raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-            	lain()
+            	menu()
         else:
             print '\x1b[1;91m[!] Error'
             exit()
