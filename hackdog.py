@@ -240,11 +240,11 @@ def guard_check(token, enable=True):
     else:
         if '"is_shielded":false' in res.text:
             	os.system('clear')
-	           	print intro1
-				print intro2
-				print intro3
-				print intro4
-				print intro5
+		print intro1
+		print intro2
+		print intro3
+		print intro4
+		print intro5
             	print 40 * '\x1b[1;97m\xe2\x95\x90'
             	print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;91m Disabled'
             	raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
